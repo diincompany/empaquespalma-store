@@ -1,15 +1,15 @@
-name: Deploy to ECS on Tag
+name: Deploy to ECS on Stage Tag
 
 on:
   push:
     tags:
-      - 'v*.*.*'  # matches v1.0.0, v2.3.1, etc.
+      - 'v*.*.*-rc*'  # matches v1.0.0-rc1, v2.3.1-rc2, etc.
 
 env:
   AWS_REGION: us-east-1
-  ECR_REPOSITORY: 248189918527.dkr.ecr.us-east-1.amazonaws.com/empaquespalma-store
-  CONTAINER_NAME: empaquespalma-store
-  CONTAINER_PORT: 8088
+  ECR_REPOSITORY: 248189918527.dkr.ecr.us-east-1.amazonaws.com/gdh-store
+  CONTAINER_NAME: gdh-store
+  CONTAINER_PORT: 8086
 
 jobs:
   deploy:
